@@ -34,16 +34,16 @@ export const localization: Record<'ru' | 'en', LanguageData> = {
       "Туннели Cloudflare"
     ],
     socialLinks: [
-      { name: "Мысли | Блог", url: "https://t.me/logovoneonerki", icon: "Send", color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
-      { name: "Связь | ТГ", url: "https://t.me/neonerka", icon: "MessageSquare", color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
-      { name: "ТикТок | Профиль", url: "https://tiktok.com/neonerka", icon: "Video", color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
-      { name: "Стим | Игры", url: "https://steamcommunity.com/profiles/76561199193561885/", icon: "Gamepad2", color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
-      { name: "Шикимори | Аниме", url: "https://shikimori.io/neonerka", icon: "Tv", color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
-      { name: "ГитХаб | Профиль", url: "https://github.com/Neonerka", icon: "Github", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
-      { name: "СаундКлауд | Лайки", url: "https://soundcloud.com/neonerka/likes", icon: "Music", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
-      { name: "СаундКлауд | Профиль", url: "https://soundcloud.com/neonerka", icon: "Music", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
-      { name: "Доты | Hypr (скоро)", url: "", icon: "Github", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
-      { name: "Доты | DrWM (скоро)", url: "", icon: "Github", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
+      { name: "Мысли ", url: "https://t.me/logovoneonerki", icon: "Send", color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
+      { name: "Личка", url: "https://t.me/neonerka", icon: "MessageSquare", color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
+      { name: "ТикТок", url: "https://tiktok.com/neonerka", icon: "Video", color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
+      { name: "Стим", url: "https://steamcommunity.com/profiles/76561199193561885/", icon: "Gamepad2", color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
+      { name: "Шикимори", url: "https://shikimori.io/neonerka", icon: "Tv", color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
+      { name: "ГитХаб", url: "https://github.com/Neonerka", icon: "Github", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
+      { name: "Плейлист", url: "https://soundcloud.com/neonerka/likes", icon: "Music", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
+      { name: "СК Профиль", url: "https://soundcloud.com/neonerka", icon: "Music", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
+      { name: "Hypr (скоро)", url: "", icon: "Github", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
+      { name: "DrWM (скоро)", url: "", icon: "Github", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
     ],
     labels: {
       nodes: "Ссылки"
@@ -66,16 +66,16 @@ export const localization: Record<'ru' | 'en', LanguageData> = {
       "Cloudflare Tunnels"
     ],
     socialLinks: [
-      { name: "Thoughts | DevLog", url: "https://t.me/logovoneonerki", icon: "Send", color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
-      { name: "Telegram | Profile", url: "https://t.me/neonerka", icon: "MessageSquare", color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
-      { name: "TikTok | Profile", url: "https://tiktok.com/neonerka", icon: "Video", color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
-      { name: "Steam | Profile", url: "https://steamcommunity.com/profiles/76561199193561885/", icon: "Gamepad2", color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
-      { name: "Shikimori | Anime", url: "https://shikimori.io/neonerka", icon: "Tv", color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
-      { name: "GitHub | Profile", url: "https://github.com/Neonerka", icon: "Github", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
-      { name: "SoundCloud | Likes", url: "https://soundcloud.com/neonerka/likes", icon: "Music", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
-      { name: "SoundCloud | Profile", url: "https://soundcloud.com/neonerka", icon: "Music", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
-      { name: "Dots | Hypr(soon)", url: "", icon: "Github", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
-      { name: "Dots | DrWM(soon)", url: "", icon: "Github", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
+      { name: "Thoughts", url: "https://t.me/logovoneonerki", icon: "Send", color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
+      { name: "Telegram", url: "https://t.me/neonerka", icon: "MessageSquare", color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
+      { name: "TikTok", url: "https://tiktok.com/neonerka", icon: "Video", color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
+      { name: "Steam", url: "https://steamcommunity.com/profiles/76561199193561885/", icon: "Gamepad2", color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
+      { name: "Shikimori", url: "https://shikimori.io/neonerka", icon: "Tv", color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
+      { name: "GitHub", url: "https://github.com/Neonerka", icon: "Github", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
+      { name: "Playlist", url: "https://soundcloud.com/neonerka/likes", icon: "Music", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
+      { name: "SC | Profile", url: "https://soundcloud.com/neonerka", icon: "Music", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
+      { name: "Hypr(soon)", url: "", icon: "Github", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" }
+      { name: "DrWM(soon)", url: "", icon: "Github", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
     ],
     labels: {
       nodes: "Links"
