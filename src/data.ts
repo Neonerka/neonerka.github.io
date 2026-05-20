@@ -74,7 +74,7 @@ export const localization: Record<'ru' | 'en', LanguageData> = {
       { name: "GitHub", url: "https://github.com/Neonerka", icon: "Github", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
       { name: "Playlist", url: "https://soundcloud.com/neonerka/likes", icon: "Music", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
       { name: "SC | Profile", url: "https://soundcloud.com/neonerka", icon: "Music", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
-      { name: "Hypr(soon)", url: "", icon: "Github", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" }
+      { name: "Hypr(soon)", url: "", icon: "Github", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
       { name: "DrWM(soon)", url: "", icon: "Github", color: "hover:text-white hover:border-white/29 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]" },
     ],
     labels: {
