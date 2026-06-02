@@ -3,8 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import * as Icons from 'lucide-react';
 import { localization } from './data';
 import { FloatingParticles } from './FloatingParticles';
-import { Balloons } from './Balloons';
-import { Confetti } from './Confetti';
 const fadeInUpVariants: any = {
   hidden: { opacity: 0, y: 15 },
   visible: { 
@@ -22,8 +20,6 @@ export default function App() {
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center p-4 bg-[#030303] overflow-hidden">
       <FloatingParticles />
-      <Balloons />
-      <Confetti />
       <div className="absolute top-[-10%] left-[-10%] w-[700px] h-[700px] bg-white/[0.03] rounded-full blur-[130px] animate-bg-float-1 pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-neutral-800/[0.15] rounded-full blur-[140px] animate-bg-float-2 pointer-events-none" />
       
