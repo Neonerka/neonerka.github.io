@@ -79,7 +79,7 @@ export const localization: Record<'ru' | 'en', LanguageData> = {
       status: "in_progress",
       projectName: "LocalStat",
       description: "Персональный кроссплатформенный дашборд мониторинга системы с AI-ассистентом (Ollama), файловым менеджером, генерацией изображений Stable Diffusion и встроенным веб-терминалом через XTerm.js. Поддерживает сканирование сети, а также полноценный сбор системной телеметрии (CPU/RAM/Storage) на Android-устройствах через Termux",
-      repoUrl: "https://github.com/Neonerka",
+      repoUrl: "https://github.com/Neonerka/LocalStat",
       todos: [
         { done: true, text: "Мониторинг системы (CPU/RAM/Диск/GPU)" },
         { done: true, text: "Сканирование сети и обнаружение устройств" },
@@ -164,7 +164,7 @@ export const localization: Record<'ru' | 'en', LanguageData> = {
       status: "in_progress",
       projectName: "LocalStat",
       description: "A personal cross-platform system monitoring dashboard with an AI assistant (Ollama), file manager, Stable Diffusion image generation, and a built-in web terminal via XTerm.js. Supports network scanning and full system telemetry collection (CPU/RAM/Storage) on Android devices through Termux.",
-      repoUrl: "https://github.com/Neonerka",
+      repoUrl: "https://github.com/Neonerka/LocalStat",
       todos: [
         { done: true, text: "System monitoring (CPU/RAM/Disk/GPU)" },
         { done: true, text: "Network scanning and device discovery" },
