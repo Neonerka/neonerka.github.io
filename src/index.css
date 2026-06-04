@@ -1,33 +1,38 @@
 @import "tailwindcss";
 
-/* 1. Анимация движения монохромных облаков на фоне */
-@keyframes floatBg {
-  0% { transform: translate(0px, 0px) scale(1); }
-  50% { transform: translate(40px, -60px) scale(1.2); }
-  100% { transform: translate(0px, 0px) scale(1); }
+*, *::before, *::after {
+  border-radius: 0 !important;
 }
 
-/* 2. Анимация шума/мерцания для ЭЛТ-эффекта */
+::selection {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
 @keyframes crtFlicker {
   0% { opacity: 0.38; }
   50% { opacity: 0.42; }
   100% { opacity: 0.38; }
 }
 
-/* 3. Анимация бегущей полосы для кнопок */
-@keyframes shine {
-  100% { left: 125%; }
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 
 body {
-  background-color: #030303;
+  background-color: #050505;
   color: #f5f5f5;
   font-family: 'JetBrains Mono', monospace, system-ui;
   overflow-x: hidden;
   position: relative;
 }
 
-/* Живой зашумленный полупрозрачный слой поверх всего сайта */
 body::after {
   content: " ";
   display: block;
@@ -41,30 +46,13 @@ body::after {
   animation: crtFlicker 0.15s infinite;
 }
 
-.animate-bg-float-1 {
-  animation: floatBg 14s infinite ease-in-out;
+.animate-cursor-blink {
+  animation: blink 1s step-end infinite;
 }
 
-.animate-bg-float-2 {
-  animation: floatBg 18s infinite ease-in-out reverse;
+@media (max-width: 768px) {
+  html {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
 }
-
-/* Класс для эффекта глянцевого отблеска на кнопках */
-.shine-effect {
-  position: relative;
-  overflow: hidden;
-}
-.shine-effect::after {
-  content: '';
-  position: absolute;
-  top: -50%; left: -60%;
-  width: 30%; hieght: 200%;
-  height: 200%;
-  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 100%);
-  transform: rotate(30deg);
-  transition: none;
-}
-.shine-effect:hover::after {
-  animation: shine 0.8s ease-in-out;
-}
-
