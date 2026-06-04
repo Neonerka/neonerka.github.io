@@ -15,15 +15,23 @@ export const sectionPhotos: Record<string, SectionPhoto[]> = {
     { src: "/photos/nixos-graphical-25.11-x86_64.png", label: "NixOS" },
     { src: "/photos/void-live-x86_64-musl-20250202-base.png", label: "Void" },
   ],
-  tracker: [
-    { src: "/photos/mylocalstat.png", label: "LocalStat Dashboard" },
-  ],
+
   footer: [
     { src: "/photos/gitacc.png", label: "GitHub" },
     { src: "/photos/steam.png", label: "Steam" },
     { src: "/photos/tg.png", label: "Telegram" },
   ],
 };
+
+export const ascii = [
+  "         /\\  /\\         ",
+  "        /  \\/  \\        ",
+  "       /        \\       ",
+  "      /  0 ww 0  \\      ",
+  "     /     --     \\     ",
+  "    / ____|  |____ \\    ",
+  "   /_-''        ''-_\\   ",
+];
 
 export const localization: Record<'ru' | 'en', LanguageData> = {
   ru: {
@@ -75,23 +83,49 @@ export const localization: Record<'ru' | 'en', LanguageData> = {
         isAchievement: true,
       },
     ],
-    tracker: {
-      status: "in_progress",
-      projectName: "LocalStat",
-      description: "Персональный кроссплатформенный дашборд мониторинга системы с AI-ассистентом (Ollama), файловым менеджером, генерацией изображений Stable Diffusion и встроенным веб-терминалом через XTerm.js. Поддерживает сканирование сети, а также полноценный сбор системной телеметрии (CPU/RAM/Storage) на Android-устройствах через Termux",
-      repoUrl: "https://github.com/Neonerka/LocalStat",
-      todos: [
-        { done: true, text: "Мониторинг системы (CPU/RAM/Диск/GPU)" },
-        { done: true, text: "Сканирование сети и обнаружение устройств" },
-        { done: true, text: "AI-чат с Ollama (мультисессии)" },
-        { done: true, text: "Генерация изображений Stable Diffusion" },
-        { done: true, text: "Веб-терминал (PTY через WebSocket)" },
-        { done: true, text: "Файловый менеджер с шарингом" },
-        { done: true, text: "Кроссплатформа (Termux + Desktop)" },
-        { done: false, text: "Автовыгрузка файлов на сервер" },
-        { done: false, text: "Медиасервер (ждёт HDD)" },
-      ],
-    },
+    tracker: [
+      {
+        status: "in_progress",
+        projectName: "LocalStat",
+        description: "Персональный кроссплатформенный дашборд мониторинга системы с AI-ассистентом (Ollama), файловым менеджером, генерацией изображений Stable Diffusion и встроенным веб-терминалом через XTerm.js. Поддерживает сканирование сети, а также полноценный сбор системной телеметрии (CPU/RAM/Storage) на Android-устройствах через Termux",
+        repoUrl: "https://github.com/Neonerka/LocalStat",
+        todos: [
+          { done: true, text: "Мониторинг системы (CPU/RAM/Диск/GPU)" },
+          { done: true, text: "Сканирование сети и обнаружение устройств" },
+          { done: true, text: "AI-чат с Ollama (мультисессии)" },
+          { done: true, text: "Генерация изображений Stable Diffusion" },
+          { done: true, text: "Веб-терминал (PTY через WebSocket)" },
+          { done: true, text: "Файловый менеджер с шарингом" },
+          { done: true, text: "Кроссплатформа (Termux + Desktop)" },
+          { done: false, text: "Автовыгрузка файлов на сервер" },
+          { done: false, text: "Медиасервер (ждёт HDD)" },
+        ],
+        photos: [
+          { src: "/photos/mylocalstat.png", label: "LocalStat Dashboard" },
+        ],
+      },
+      {
+        status: "in_progress",
+        projectName: "Fog of Drun",
+        description: "Мобильное приложение для прогулок и пробежек с механикой «Туман войны». Карта постепенно открывается по мере перемещения, а в скрытых тайлах генерируются сундуки, фото-задания и сокровища. Полностью офлайн: GPS без интернета, тайлы кэшируются, прогресс в SQLite. Синхронизация с ПК по Wi-Fi.",
+        repoUrl: "https://github.com/Neonerka/fog-of-drun",
+        todos: [
+          { done: true, text: "Карта с туманом войны" }, 
+          { done: true, text: "Геймификация прогулок фото/сокровища/достижения/XP" },
+          { done: true, text: "Выбор зоны для геймификации" },
+          { done: false, text: "Оптимизация большого количества тайлов" },
+          { done: false, text: "Плавное открытие тайлов" },
+          { done: false, text: "Стабильная работа в фоне" },
+          { done: false, text: "Логи прогулок" },
+          { done: false, text: "Красивое открытие тайлов (анимация)" },
+        ],
+        photos: [
+          { src: "/photos/fogofdrun.png", label: "Fog of Drun" },
+          { src: "/photos/fogofdrun1.png", label: "Gameplay" },
+          { src: "/photos/fogofdrun2.png", label: "Map" },
+        ],
+      },
+    ],
     footerLinks: [
       { name: "Мысли", url: "https://t.me/logovoneonerki", icon: "Send" },
       { name: "Личка", url: "https://t.me/neonerka", icon: "MessageSquare" },
@@ -108,6 +142,8 @@ export const localization: Record<'ru' | 'en', LanguageData> = {
       achievements: "Достижения",
       status: "Статус",
       viewOnGitHub: "Открыть на GitHub",
+      previous: "← Назад",
+      next: "Вперёд →",
     },
   },
 
@@ -160,23 +196,49 @@ export const localization: Record<'ru' | 'en', LanguageData> = {
         isAchievement: true,
       },
     ],
-    tracker: {
-      status: "in_progress",
-      projectName: "LocalStat",
-      description: "A personal cross-platform system monitoring dashboard with an AI assistant (Ollama), file manager, Stable Diffusion image generation, and a built-in web terminal via XTerm.js. Supports network scanning and full system telemetry collection (CPU/RAM/Storage) on Android devices through Termux.",
-      repoUrl: "https://github.com/Neonerka/LocalStat",
-      todos: [
-        { done: true, text: "System monitoring (CPU/RAM/Disk/GPU)" },
-        { done: true, text: "Network scanning and device discovery" },
-        { done: true, text: "AI chat with Ollama (multi-session)" },
-        { done: true, text: "Stable Diffusion image generation" },
-        { done: true, text: "Web terminal (PTY via WebSocket)" },
-        { done: true, text: "File manager with sharing" },
-        { done: true, text: "Cross-platform (Termux + Desktop)" },
-        { done: false, text: "Auto-upload files to server" },
-        { done: false, text: "Media server (waiting for HDD)" },
-      ],
-    },
+    tracker: [
+      {
+        status: "in_progress",
+        projectName: "LocalStat",
+        description: "A personal cross-platform system monitoring dashboard with an AI assistant (Ollama), file manager, Stable Diffusion image generation, and a built-in web terminal via XTerm.js. Supports network scanning and full system telemetry collection (CPU/RAM/Storage) on Android devices through Termux.",
+        repoUrl: "https://github.com/Neonerka/LocalStat",
+        todos: [
+          { done: true, text: "System monitoring (CPU/RAM/Disk/GPU)" },
+          { done: true, text: "Network scanning and device discovery" },
+          { done: true, text: "AI chat with Ollama (multi-session)" },
+          { done: true, text: "Stable Diffusion image generation" },
+          { done: true, text: "Web terminal (PTY via WebSocket)" },
+          { done: true, text: "File manager with sharing" },
+          { done: true, text: "Cross-platform (Termux + Desktop)" },
+          { done: false, text: "Auto-upload files to server" },
+          { done: false, text: "Media server (waiting for HDD)" },
+        ],
+        photos: [
+          { src: "/photos/mylocalstat.png", label: "LocalStat Dashboard" },
+        ],
+      },
+      {
+        status: "in_progress",
+        projectName: "Fog of Drun",
+        description: "Mobile app for walks and runs with a Fog of War mechanic. The map gradually reveals itself as you move, with chests, photo tasks, and treasures spawning on hidden tiles. Fully offline: GPS works without internet, map tiles cached, progress stored in SQLite. Syncs with PC over Wi-Fi.",
+        repoUrl: "https://github.com/Neonerka/fog-of-drun",
+        todos: [
+          { done: true, text: "Fog of War map" },
+          { done: true, text: "Walk gamification: photo tasks, treasures, achievements, XP" },
+          { done: true, text: "Area selection for gamification" },
+          { done: false, text: "Optimize large tile counts" },
+          { done: false, text: "Smooth tile reveal animation" },
+          { done: false, text: "Stable background operation" },
+          { done: false, text: "Walk session logging" },
+          { done: false, text: "Beautiful tile reveal animation" },
+        ],
+        photos: [
+          { src: "/photos/fogofdrun.png", label: "Map"},
+          { src: "/photos/fogofdrun1.png", label: "EXP"},
+          { src: "/photos/fogofdrun1.png", label: "Gameplay"},          
+        ],
+      },
+    ],
     footerLinks: [
       { name: "Thoughts", url: "https://t.me/logovoneonerki", icon: "Send" },
       { name: "Telegram", url: "https://t.me/neonerka", icon: "MessageSquare" },
@@ -193,6 +255,8 @@ export const localization: Record<'ru' | 'en', LanguageData> = {
       achievements: "Achievements",
       status: "Status",
       viewOnGitHub: "View on GitHub",
+      previous: "← Previous",
+      next: "Next →",
     },
   },
 };

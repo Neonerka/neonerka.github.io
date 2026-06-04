@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { localization, sectionPhotos } from './data';
 import SectionWrapper from './SectionWrapper';
 import SectionLayout from './SectionLayout';
@@ -7,10 +7,34 @@ import Story from './sections/Story';
 import Skills from './sections/Skills';
 import Tracker from './sections/Tracker';
 import Footer from './sections/Footer';
+import AppMobile from './AppMobile';
+
+function useMobile() {
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)');
+    setMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setMobile(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+  return mobile;
+}
 
 export default function App() {
   const [lang, setLang] = useState<'ru' | 'en'>('ru');
+  const [trackerIdx, setTrackerIdx] = useState(0);
   const data = localization[lang];
+  const isMobile = useMobile();
+
+  const handleSetLang = (l: 'ru' | 'en') => {
+    setLang(l);
+    if (!isMobile) setTrackerIdx(0);
+  };
+
+  if (isMobile) {
+    return <AppMobile data={data} lang={lang} onLangChange={setLang} />;
+  }
 
   return (
     <div className="relative w-full min-h-screen bg-[#050505]">
@@ -18,7 +42,7 @@ export default function App() {
         {(['ru', 'en'] as const).map((l) => (
           <button
             key={l}
-            onClick={() => setLang(l)}
+            onClick={() => handleSetLang(l)}
             className={`px-3 py-1.5 text-[10px] font-bold tracking-widest uppercase transition-all duration-200 cursor-pointer ${
               lang === l
                 ? 'bg-white text-black'
@@ -59,11 +83,12 @@ export default function App() {
           </SectionLayout>
         </SectionWrapper>
 
-        <SectionWrapper key={`tracker-${lang}`} id="tracker">
-          <SectionLayout photos={sectionPhotos.tracker} photoSize="default">
+        <SectionWrapper key={`tracker-${lang}-${trackerIdx}`} id="tracker">
+          <SectionLayout photos={data.tracker[trackerIdx].photos} photoSize="default">
             <Tracker
-              data={data.tracker}
-              todos={data.tracker.todos}
+              projects={data.tracker}
+              currentIdx={trackerIdx}
+              onSelect={(idx) => setTrackerIdx(idx)}
               viewOnGitHub={data.labels.viewOnGitHub}
             />
           </SectionLayout>

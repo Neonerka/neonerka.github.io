@@ -32,6 +32,15 @@ export interface SectionPhoto {
   label: string;
 }
 
+export interface TrackerProject {
+  status: 'in_progress' | 'paused' | 'planned';
+  projectName: string;
+  description: string;
+  repoUrl: string;
+  todos: TodoItem[];
+  photos: SectionPhoto[];
+}
+
 export interface LanguageData {
   hero: {
     name: string;
@@ -41,7 +50,7 @@ export interface LanguageData {
   story: string[];
   currentlyLearning: LearningTopic[];
   skillCategories: SkillCategory[];
-  tracker: ActivityData & { todos: TodoItem[] };
+  tracker: TrackerProject[];
   footerLinks: {
     name: string;
     url: string;
@@ -58,5 +67,7 @@ export interface LanguageData {
     achievements: string;
     status: string;
     viewOnGitHub: string;
+    previous: string;
+    next: string;
   };
 }

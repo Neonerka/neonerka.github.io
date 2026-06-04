@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 import { GithubIcon } from '../icons';
-import type { ActivityData, TodoItem } from '../types';
+import type { TrackerProject } from '../types';
 
 interface TrackerProps {
-  data: ActivityData;
-  todos: TodoItem[];
+  projects: TrackerProject[];
+  currentIdx: number;
+  onSelect: (idx: number) => void;
   viewOnGitHub: string;
 }
 
@@ -28,8 +29,14 @@ const slideSmall = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' as const } },
 };
 
-export default function Tracker({ data, todos, viewOnGitHub }: TrackerProps) {
-  const status = statusIcon[data.status];
+export default function Tracker({
+  projects,
+  currentIdx,
+  onSelect,
+  viewOnGitHub,
+}: TrackerProps) {
+  const project = projects[currentIdx];
+  const status = statusIcon[project.status];
 
   return (
     <div className="max-w-3xl">
@@ -40,18 +47,18 @@ export default function Tracker({ data, todos, viewOnGitHub }: TrackerProps) {
         variants={stagger}
       >
         <motion.p variants={fadeIn} className="text-sm md:text-base text-neutral-500 mb-8">
-          <span className="text-neutral-400">$</span> systemctl status {data.projectName.toLowerCase()}.service
+          <span className="text-neutral-400">$</span> systemctl status {project.projectName.toLowerCase()}.service
         </motion.p>
 
-        <motion.div variants={slideSmall} className="mb-1">
+        <motion.div key={`status-${currentIdx}`} variants={slideSmall} className="mb-1">
           <p className="text-sm md:text-base text-neutral-300">
             <span className={`${status.color} mr-2`}>{status.char}</span>
-            <span className="text-neutral-500">{data.projectName.toLowerCase()}.service — </span>
-            {data.projectName}
+            <span className="text-neutral-500">{project.projectName.toLowerCase()}.service — </span>
+            {project.projectName}
           </p>
         </motion.div>
 
-        <motion.p variants={slideSmall} className="text-xs md:text-sm text-neutral-600 mb-6 ml-5">
+        <motion.p key={`sub-${currentIdx}`} variants={slideSmall} className="text-xs md:text-sm text-neutral-600 mb-6 ml-5">
           Status: active (running)
         </motion.p>
 
@@ -59,8 +66,8 @@ export default function Tracker({ data, todos, viewOnGitHub }: TrackerProps) {
           <span className="text-neutral-400">$</span> cat TODO.md
         </motion.p>
 
-        <div className="space-y-1 ml-5 mb-6">
-          {todos.map((todo, i) => (
+        <div key={`todos-${currentIdx}`} className="space-y-1 ml-5 mb-6">
+          {project.todos.map((todo, i) => (
             <motion.p
               key={i}
               variants={slideSmall}
@@ -75,19 +82,20 @@ export default function Tracker({ data, todos, viewOnGitHub }: TrackerProps) {
         </div>
 
         <motion.p
+          key={`desc-${currentIdx}`}
           variants={slideSmall}
           className="text-sm md:text-base text-neutral-400 leading-relaxed mb-6"
         >
-          <TypewriterText text={data.description} />
+          <TypewriterText text={project.description} key={currentIdx} />
         </motion.p>
 
         <motion.p variants={fadeIn} className="text-sm md:text-base text-neutral-500 mt-4">
-          <span className="text-neutral-400">$</span> gh repo view Neonerka/{data.projectName}
+          <span className="text-neutral-400">$</span> gh repo view Neonerka/{project.projectName}
         </motion.p>
 
         <motion.a
           variants={slideSmall}
-          href={data.repoUrl}
+          href={project.repoUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-sm md:text-base text-neutral-500 hover:text-white transition-colors duration-200 mt-1 ml-5"
@@ -96,7 +104,28 @@ export default function Tracker({ data, todos, viewOnGitHub }: TrackerProps) {
           {viewOnGitHub}
         </motion.a>
 
-        <motion.p variants={fadeIn} className="text-sm md:text-base text-neutral-600 mt-8">
+        <motion.p variants={fadeIn} className="text-sm md:text-base text-neutral-500 mb-3 mt-8">
+          <span className="text-neutral-400">$</span> cd ../projects
+        </motion.p>
+
+        <div className="ml-5 space-y-1 mb-6">
+          {projects.map((p, i) => (
+            <motion.p
+              key={i}
+              variants={slideSmall}
+              onClick={() => onSelect(i)}
+              className={`text-sm md:text-base cursor-pointer transition-colors duration-200 ${
+                i === currentIdx
+                  ? 'text-neutral-300'
+                  : 'text-neutral-600 hover:text-neutral-400'
+              }`}
+            >
+              <span className="text-neutral-600">&gt;</span> {p.projectName}/
+            </motion.p>
+          ))}
+        </div>
+
+        <motion.p variants={fadeIn} className="text-sm md:text-base text-neutral-600 mt-6">
           $<span className="inline-block w-2.5 h-4 md:w-3 md:h-5 bg-neutral-500 align-middle ml-1 animate-cursor-blink" />
         </motion.p>
       </motion.div>

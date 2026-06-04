@@ -9,13 +9,15 @@ interface HeroProps {
 }
 
 const ascii = [
-  "       /\\           ",
-  "      /  \\          ",
-  "     /\\   \\         ",
-  "    / >  < \\        ",
-  "   /   __   \\       ",
-  "  / __|  |__\\-      ",
-  " /_-''    ''-_\\     ",
+  "                   ",
+  "             __          ",
+  "            /  \\       ",
+  "           /    \\      ",
+  "          /\\    /\\     ",
+  "         /  0 - 0 \\    ",
+  "        /   ____   \\    ",
+  "       / __|    |__ \\   ",
+  "      /_-''      ''-_\\   ",
 ];
 
 function getUptime(since: string): string {
@@ -64,7 +66,7 @@ export default function Hero({ name, systemInfo, since }: HeroProps) {
         </motion.p>
 
         <motion.p variants={slideSmall} className="text-sm md:text-base text-neutral-600 mb-4">
-          <span className="text-neutral-400">$</span> neofetch
+          <span className="text-neutral-400">$</span> uwufetch
         </motion.p>
 
         <motion.div variants={fadeIn} className="flex gap-6 md:gap-12 items-start">
